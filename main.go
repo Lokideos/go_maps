@@ -4,17 +4,21 @@ import "fmt"
 
 func main() {
 	// var colors map[string]string
+	// colors := make(map[int]string)
+	// colors[10] = "#ffffff"
+	// delete(colors, 10)
 
-	colors := make(map[int]string)
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"green": "#7cfc00",
+		"white": "#ffffff",
+	}
 
-	// colors := map[string]string{
-	// 	"red":   "#ff0000",
-	// 	"green": "#7cfc00",
-	// }
+	printMap(colors)
+}
 
-	colors[10] = "#ffffff"
-
-	delete(colors, 10)
-
-	fmt.Println(colors)
+func printMap(c map[string]string) {
+	for color, hex := range c {
+		fmt.Println("Hex code for", color, "is", hex)
+	}
 }
